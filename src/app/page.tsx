@@ -2,7 +2,6 @@ import { BlurFade } from '@/components/magicui/blur-fade';
 import { DotPattern } from '@/components/magicui/dot-pattern';
 import { cn } from '@/lib/utils';
 import { GridPattern } from '@/components/magicui/grid-pattern';
-
 export default function Home() {
   return (
     <div className="relative flex flex-col justify-between min-h-screen bg-neutral-900 overflow-hidden">
