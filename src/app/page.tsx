@@ -3,18 +3,17 @@ import { DotPattern } from "@/components/magicui/dot-pattern";
 import { cn } from "@/lib/utils";
 import { GridPattern } from "@/components/magicui/grid-pattern";
 import { ProfileCard } from "@/components/profile-card";
-
+import { ArrowRight } from "lucide-react";
 export default function Home() {
   return (
     <div className="relative flex flex-col justify-between min-h-screen bg-neutral-900 overflow-hidden">
       <main className="relative text-center *:text-white flex flex-col items-center justify-center flex-1">
         <BlurFade>
-          <p className="font-bold text-3xl text-white">
+          <p className="font-bold text-5xl text-white">
             👋 Hello, I&lsquo;m Mateus Werneck!
           </p>
           <p className="font-bold text-xl text-gray-300 mt-2 ">
-            {" "}
-            Im open for freelancing projects!
+            And currently open for free-lance projects and collaborations.
           </p>
         </BlurFade>
         <section className="mt-4 text-2xl text-white">
@@ -54,6 +53,17 @@ S
               </li>
             </ul>
           </div>
+
+          <a
+            href="mailto:mwrnkdev@gmail.com"
+            aria-label="Enviar e-mail para mwrnkdev@gmail.com"
+            className="group block max-w-md m-4 px-4 py-3 text-lg md:text-xl text-gray-300 border border-gray-700 rounded-2xl bg-neutral-800 hover:bg-neutral-700 shadow-lg transition-colors duration-200"
+          >
+            <span className="flex items-center justify-between">
+              <span className="truncate">mwrnkdev@gmail.com</span>
+              <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
+            </span>
+          </a>
         </BlurFade>
       </main>
       <GridPattern
