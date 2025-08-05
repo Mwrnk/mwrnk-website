@@ -13,7 +13,7 @@ export default function Home() {
             👋 Hello, I&lsquo;m Mateus Werneck!
           </p>
           <p className="font-bold text-xl text-gray-300 mt-2 ">
-            And currently open for free-lance projects and collaborations.
+            Currently open for free-lance projects and collaborations.
           </p>
         </BlurFade>
         <section className="mt-4 text-2xl text-white">
