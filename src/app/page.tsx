@@ -1,76 +1,232 @@
-import { DotGrid } from '@/components/dot-grid';
-import { ProjectMorph } from '@/components/project-morph';
-import { GearBento } from '@/components/gear-bento';
+import { HeroName } from "@/components/ui/hero-name";
+import { HeroTools } from "@/components/ui/hero-tools";
 
 export default function Home() {
   return (
-    <>
-      <DotGrid />
-      <div className="content">
-        <nav>
-          <div className="nav-name">Mateus Werneck</div>
-          <div className="nav-links">
-            <a href="#work" className="active">Work</a>
-            <a href="#gear">Gear</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </nav>
+    <div className="layout">
 
-        <section className="hero">
-          <h1 className="hero-title reveal reveal-d1">Dev<br /><em>&amp; Creator</em></h1>
-          <p className="hero-subtitle reveal reveal-d2">
-            React &amp; React Native developer building responsive interfaces and mobile experiences. Open for freelance and junior opportunities.
-          </p>
-        </section>
+      {/* NAV */}
+      <nav className="animate">
+        <span className="nav-logo">werneck.dev</span>
+        <ul className="nav-links">
+          <li><a href="#about">about</a></li>
+          <li><a href="#projects">projects</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+      </nav>
 
-        <section className="section" id="work">
-          <div className="section-label reveal reveal-d1">Selected Projects</div>
-          <ProjectMorph />
-        </section>
-
-        <section className="section" id="gear">
-          <div className="section-label reveal reveal-d1">Gear &amp; Tools</div>
-          <GearBento />
-        </section>
-
-        <section className="about-section" id="about">
-          <div className="about-left">
-            <h2 className="about-heading">
-              From design<br />to shipped<br /><em>product</em>
-            </h2>
-          </div>
-          <div className="about-right">
-            <p>
-              React and React Native developer based in Brazil 🇧🇷, with experience in TypeScript, Next.js, REST APIs, and the full mobile development lifecycle — from implementation to App Store publication.
-            </p>
-            <p>
-              Comfortable translating Figma designs into pixel-perfect code, building reusable component systems, and working closely with UI/UX concepts. Strong foundation in React Hooks, state management, and component-based architecture.
-            </p>
-            <div className="status-bar">
-              <div className="status-dot"></div>
-              <span className="status-text">Open to Junior React / React Native roles — 2026</span>
+      {/* HERO GRID */}
+      <section className="animate delay-1">
+        <div className="grid-12">
+          <div className="cell cell-span-8 no-hover">
+            <div className="status-badge">
+              <span className="dot green"></span>
+              Open to opportunities
+            </div>
+            <HeroName />
+            <div className="hero-location">
+              <span className="dot"></span>
+              Muriaé, MG — Brazil
             </div>
           </div>
-        </section>
-
-        <section className="contact-section" id="contact">
-          <h2 className="contact-heading">
-            Let&apos;s make<br /><em>something real</em>
-          </h2>
-          <a href="mailto:mwrnkdev@gmail.com" className="contact-email">
-            mwrnkdev@gmail.com
-          </a>
-        </section>
-
-        <footer>
-          <div className="footer-left">© 2026 Mateus Werneck</div>
-          <div className="footer-right">
-            <a href="https://github.com/Mwrnk" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/mateuswerneck/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <div className="cell cell-span-4 no-hover" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '20px' }}>
+            <div>
+              <div className="stat-number">3+</div>
+              <div className="stat-label">Years building</div>
+            </div>
+            <HeroTools />
           </div>
-        </footer>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="animate delay-2">
+        <div className="grid-2col">
+          <div className="cell no-hover">
+            <div className="section-label">About</div>
+            <p className="about-text">
+              Junior frontend developer specializing in <strong>React</strong>,{' '}
+              <strong>React Native</strong>, <strong>TypeScript</strong>, and{' '}
+              <strong>Next.js</strong>. I care deeply about UI craft — the kind of
+              interface where details like timing curves and spatial rhythm actually
+              matter.
+            </p>
+            <p className="about-text" style={{ marginTop: '14px' }}>
+              Currently building <strong>Discentia</strong> — an AI-powered
+              spaced repetition app — while looking for a remote CLT/PJ role where
+              I can ship beautiful, fast, well-reasoned code.
+            </p>
+          </div>
+          <div className="cell no-hover">
+            <div className="section-label">Stack</div>
+            <div className="tags">
+              <span className="tag">TypeScript</span>
+              <span className="tag">React</span>
+              <span className="tag">Next.js</span>
+              <span className="tag">React Native</span>
+              <span className="tag">Node.js</span>
+              <span className="tag">REST APIs</span>
+              <span className="tag">PostgreSQL</span>
+              <span className="tag">SQL</span>
+              <span className="tag">Git</span>
+              <span className="tag">Tailwind CSS</span>
+              <span className="tag">Docker</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PROJECTS */}
+      <section id="projects" className="animate delay-3">
+        <div className="grid-3col">
+
+          <div className="cell project">
+            <div className="section-label">01</div>
+            <div className="project-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <svg width="14" height="12" viewBox="0 0 510 425" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
+                <path d="M85 85V0H425V85H510V255H425V425C378.056 425 340 386.944 340 340H255C208.056 340 170 301.944 170 255H0V85H85Z" fill="#FF5787"/>
+              </svg>
+              Discentia
+            </div>
+            <p className="project-desc">
+              AI-powered flashcard and spaced repetition system. Upload a PDF, get
+              flashcards generated by AI, review with an SRS algorithm. Built with
+              Next.js 15, React 19, Dexie/IndexedDB, and a Fastify backend.
+            </p>
+            <div className="project-meta">
+              <div className="tags">
+                <span className="tag">Next.js</span>
+                <span className="tag">AI</span>
+                <span className="tag">SRS</span>
+              </div>
+              <span className="project-status wip">In progress</span>
+            </div>
+          </div>
+
+          <div className="cell project">
+            <div className="section-label">02</div>
+            <a href="https://play.google.com/store/apps/details?id=com.valevida.app&hl=en-US&ah=QQjwwEgXI3zWvP_WrUEUEgjX5FQ" target="_blank" rel="noreferrer" className="project-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <svg width="14" height="14" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0, borderRadius: '3px' }}>
+                <rect width="200" height="200" fill="#034BC4"/>
+                <path fillRule="evenodd" clipRule="evenodd" d="M99.6143 59.6414H124.839C127.399 59.6414 128.441 61.7302 127.156 64.2831L91.2073 135.716C89.9226 138.269 86.7777 140.358 84.2184 140.358H54.3402L92.6252 64.2831C93.91 61.7302 97.055 59.6414 99.6143 59.6414Z" fill="#A6FF00"/>
+                <path fillRule="evenodd" clipRule="evenodd" d="M138.907 59.6416H164.132C166.692 59.6416 167.734 61.7303 166.449 64.2834L130.5 135.717C129.216 138.27 126.071 140.358 123.511 140.358H93.6331L131.918 64.2834C133.203 61.7303 136.348 59.6416 138.907 59.6416Z" fill="#FEFEFE"/>
+                <path fillRule="evenodd" clipRule="evenodd" d="M54.0682 96.2032L36.409 96.3988C33.8505 96.427 32.4187 98.2102 33.2254 100.422C34.0555 102.697 51.6111 138.351 51.6111 138.351L65.5432 110.667L60.1904 100.226C59.082 98.0637 56.6249 96.175 54.0682 96.2032Z" fill="#A6FF00"/>
+                <path fillRule="evenodd" clipRule="evenodd" d="M66.2152 96.3115C64.2265 96.2736 63.231 97.5896 63.8585 99.3094C64.5039 101.079 67.3745 106.766 67.3745 106.766C72.7625 96.0604 72.6412 96.3015 72.6412 96.3015C72.4529 96.3062 72.522 96.4317 66.2152 96.3115Z" fill="#FEFEFE"/>
+              </svg>
+              ValeVida
+            </a>
+            <p className="project-desc">
+              Benefits platform mobile app for workers. Reduced crash rate by ~40%
+              via Sentry integration. Published on Google Play and App Store with
+              RevenueCat subscriptions.
+            </p>
+            <div className="project-meta">
+              <div className="tags">
+                <span className="tag">React Native</span>
+                <span className="tag">RevenueCat</span>
+              </div>
+              <span className="project-status live">Live</span>
+            </div>
+          </div>
+
+          <div className="cell project">
+            <div className="section-label">03</div>
+            <a href="https://neet.website" target="_blank" rel="noreferrer" className="project-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <svg width="15" height="10" viewBox="0 0 46 31" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
+                <path d="M19.7562 6.88873H3.34528C3.11291 6.88873 2.91415 7.05543 2.87469 7.28354L2.13226 11.4934C2.08111 11.7859 2.30617 12.0549 2.60285 12.0549H18.6761C18.9728 12.0549 19.1993 12.324 19.1467 12.6164L18.1018 18.5488C18.0609 18.7769 17.8636 18.9436 17.6312 18.9436H1.2203C0.987927 18.9436 0.789166 19.1103 0.749707 19.3384L0.00727578 23.5483C-0.0438758 23.8408 0.181191 24.1098 0.47787 24.1098H16.5512C16.8478 24.1098 17.0744 24.3789 17.0217 24.6713L16.006 30.437C15.9549 30.7295 16.1799 30.9985 16.4766 30.9985H39.603C39.8353 30.9985 40.0341 30.8318 40.0736 30.6037L41.1185 24.6713C41.1697 24.3789 40.9446 24.1098 40.6479 24.1098H24.5746C24.278 24.1098 24.0514 23.8408 24.104 23.5483L24.8465 19.3384C24.8874 19.1103 25.0847 18.9436 25.3171 18.9436H41.728C41.9603 18.9436 42.1591 18.7769 42.1986 18.5488L43.2435 12.6164C43.2947 12.324 43.0696 12.0549 42.7729 12.0549H26.6996C26.4029 12.0549 26.1764 11.7859 26.229 11.4934L26.9715 7.28354C27.0124 7.05543 27.2097 6.88873 27.4421 6.88873H43.8529C44.0853 6.88873 44.2841 6.72203 44.3235 6.49392L45.3685 0.561509C45.4196 0.269057 45.1946 0 44.8979 0H21.7715C21.5392 0 21.3404 0.166698 21.3009 0.394811L20.2268 6.49245C20.1858 6.72057 19.9885 6.88727 19.7562 6.88727V6.88873Z" fill="white"/>
+              </svg>
+              NEET App
+            </a>
+            <p className="project-desc">
+              Study and productivity app for students targeting competitive exams.
+              Grew a waitlist of 300+ users before launch through organic social
+              reach.
+            </p>
+            <div className="project-meta">
+              <div className="tags">
+                <span className="tag">React Native</span>
+                <span className="tag">TypeScript</span>
+              </div>
+              <span className="project-status beta">Beta</span>
+            </div>
+          </div>
+
+          <div className="cell project" style={{ gridColumn: '1 / span 2' }}>
+            <div className="section-label">04</div>
+            <a href="https://github.com/Mwrnk/organizei-mobile" target="_blank" rel="noreferrer" className="project-title">Organizei</a>
+            <p className="project-desc">
+              Cross-platform SaaS for team organization and task management, built
+              alongside a 7-person team. Focused on performance, real-time updates,
+              and a clean, opinionated UI.
+            </p>
+            <div className="project-meta">
+              <div className="tags">
+                <span className="tag">React</span>
+                <span className="tag">TypeScript</span>
+                <span className="tag">SaaS</span>
+              </div>
+              <span className="project-status live">Live</span>
+            </div>
+          </div>
+
+          <div className="cell no-hover" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div className="section-label">Philosophy</div>
+            <p className="about-text" style={{ fontSize: '13px' }}>
+              Good software is invisible. Great UI feels inevitable — like it
+              couldn&apos;t have been built any other way.
+            </p>
+            <a href="#contact" className="arrow-link" style={{ marginTop: 'auto' }}>
+              Get in touch →
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      {/* CONTACT + AVAILABILITY */}
+      <section id="contact" className="animate delay-4">
+        <div className="footer">
+          <div className="cell no-hover">
+            <div className="section-label">Contact</div>
+            <div className="contact-item">
+              <span className="contact-label">Email</span>
+              <a href="mailto:mwrnkdev@gmail.com">mwrnkdev@gmail.com</a>
+            </div>
+            <div className="contact-item">
+              <span className="contact-label">LinkedIn</span>
+              <a href="https://linkedin.com/in/mateuswerneck" target="_blank" rel="noreferrer">linkedin.com/in/mateuswerneck</a>
+            </div>
+            <div className="contact-item">
+              <span className="contact-label">GitHub</span>
+              <a href="https://github.com/Mwrnk" target="_blank" rel="noreferrer">github.com/Mwrnk</a>
+            </div>
+          </div>
+          <div className="cell no-hover" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div>
+              <div className="section-label">Availability</div>
+              <p className="about-text" style={{ fontSize: '13px' }}>
+                Actively looking for <strong>remote CLT or PJ</strong> positions
+                in Brazil or LATAM. Open to frontend, fullstack, and mobile roles.
+              </p>
+            </div>
+            <div style={{ marginTop: '24px' }}>
+              <div className="stat-number" style={{ fontSize: '22px' }}>Remote</div>
+              <div className="stat-label">Brazil · LATAM</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BOTTOM BAR */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px 0 0', marginTop: '16px' }}>
+        <span style={{ fontFamily: 'var(--mono)', fontSize: '10px', color: 'var(--text-dim)' }}>
+          © 2026 Werneck
+        </span>
+        <span style={{ fontFamily: 'var(--mono)', fontSize: '10px', color: 'var(--text-dim)' }}>
+          Built with Next.js · Deployed on Vercel
+        </span>
       </div>
-    </>
+
+    </div>
   );
 }

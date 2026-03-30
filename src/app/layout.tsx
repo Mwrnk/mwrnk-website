@@ -1,31 +1,28 @@
-import type { Metadata } from "next";
-import { Instrument_Serif } from "next/font/google";
+import { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next";
 
-const instrumentSerif = Instrument_Serif({
-  weight: "400",
-  style: ["normal", "italic"],
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  variable: "--font-instrument-serif",
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Mateus Werneck",
-  description: "Developer & Creator — open for freelance projects and collaborations.",
+  title: "Werneck — Frontend Developer",
+  description: "Junior frontend developer specializing in React, React Native, TypeScript, and Next.js.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <head>
-        <Analytics />
-      </head>
-      <body className={instrumentSerif.variable}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>
     </html>
